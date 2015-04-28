@@ -1,0 +1,52 @@
+This is another example of an R Markdown document
+===============================================================================
+
+## Section 1: Loading Data
+
+```{r echo = FALSE, results = 'hide'}
+library(dplyr)
+library(datasets)
+library(ggplot2)
+dsize <- print(object.size(iris), units = 'Kb')
+```
+
+Following is a sample of our dataset:
+```{r echo = FALSE}
+tbl_df(iris)
+```
+
+
+## Section 2: Inspecting the data
+
+Following is a summary of the dataset:
+```{r echo = FALSE}
+summary(iris)
+
+ggplot(data = iris, aes(x = Species, y = Petal.Length)) + geom_boxplot(color = 'black', fill = 'gray') + theme_bw() + 
+labs(title = 'Length Distribution of Plant Species', x = 'Species', y = 'Petal Length')
+
+ggplot(data = iris, aes(x = Petal.Length, y = Sepal.Width, colour = Species)) + geom_point(data = iris, aes(shape = Species)) + theme_bw() +
+labs(title = 'Correlation of Sepal Width and Petal Length', x = 'Petal Length', y = 'Sepal Width')
+
+ggplot(data = iris, aes(x = Petal.Length, y = Sepal.Width)) + geom_point() + facet_grid(.~Species) + theme_bw() +
+labs(title = 'Correlation of Sepal Width and Petal Length', x = 'Petal Length', y = 'Sepal Width')
+
+```
+
+
+## Section 3: Hypotheses Formulation
+
+Our hypotheses go here...
+
+
+## Section 4: Modelling
+
+```{r echo = FALSE}
+ggplot(data = iris, aes(x = Petal.Length, y = Sepal.Width)) + geom_point() + geom_smooth(method = lm) + facet_grid(.~Species) + theme_bw()
+
+```
+
+## Conclusion
+
+Our hypothesis is correct!
+

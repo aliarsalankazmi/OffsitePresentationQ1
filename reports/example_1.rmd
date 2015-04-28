@@ -1,0 +1,96 @@
+This is an example R Markdown document
+===============================================================================
+
+
+RMarkdown enables users to combine their narratives with any analyses they perform on any data. Thus, the entire process of analysing data, starting from formulation of hypotheses, extraction and manipulation of data, data modelling, and results' presentation can be combined in one document.
+
+If the data are re-freshed, the report can simply be reproduced without any need of modifying the existing code, since any narrative text, script for reading and analysing data, and the script for visualisation rest in their own 'places'.
+
+```{r, echo = FALSE, results = 'hide'}
+library(ggplot2)
+library(lubridate)
+library(rCharts)
+```
+
+```{r echo = FALSE, results = 'hide'}
+today_date <- date()
+
+### Following is plot1
+
+my_data1 <- data.frame(
+  year = factor(77:86),
+  us = c(1320, 1280, 1350, 1400, 1470, 1420, 1440, 1580, 1520, 1610),
+  japan = c(405, 405, 480, 500, 490, 495, 480, 480, 500, 530),
+  germany = c(220, 225, 290, 320, 300, 280, 260, 240, 220, 225),
+  other = c(1280, 1195, 1310, 1390, 1270, 1200, 1100, 1100, 1040, 1080))
+
+p1 <- ggplot(my_data1, aes(x = year, y = other)) + 
+  geom_bar(stat = "identity", fill = "black", colour = "black", width = 0.4) +
+  scale_y_continuous(breaks=seq(0, 1600, 200), limits = c(0, 1600), 
+                     expand = c(0, 0)) +
+  labs(x = "Year", y = "Millions of Gallons") +
+  ggtitle("Plot 1: Example Bar Plot") +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "black"),
+        plot.title = element_text(size = rel(1.5), face = "bold", vjust = 1.5),
+        axis.title = element_text(face = "bold"))
+
+
+### Following is plot2
+
+my_data2 <- data.frame(
+  population = c(60, 63, 75, 80, 80, 80, 90, 120, 
+                 130, 140, 145, 160, 180, 200, 210, 
+                 220, 250, 255, 380, 690, 900, 1100),
+  city = c('Edinburgh', 'Stockholm', 'Florence', 'Genoa', 'Turin',
+           'Warsaw', 'Copenhagen', 'Lisbon', 'Palermo', 'Madrid',
+           'Berlin', 'Rome', 'Petersburgh', 'Venice', 'Dublin', 
+           'Amsterdam', 'Moscow', 'Vienna', 'Naples', 'Paris', 
+           'Constantinople', 'London'))
+
+p2 <- ggplot(my_data2, aes(x = population, y = reorder(city, population))) + 
+  geom_point(size = 3) +
+  scale_x_continuous(breaks = seq(200, 1100, 200), limits = c(0, 1150),
+                     expand = c(0, 0)) +
+  scale_y_discrete(expand = c(0, 0.5)) +
+  labs(x = "Population (thousands)", y = NULL) +
+  ggtitle("Plot 2: An Example Dot Plot") + 
+  theme_bw() +
+  theme(panel.grid.major.y = element_line(colour = "grey50"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(size = rel(1.5), face = "bold", vjust = 1.5),
+        axis.title.x = element_text(size = 13),
+        axis.ticks.y = element_blank())
+
+
+### Following is plot3
+p3 <- qplot(carat, price, data = diamonds, colour = cut)
+
+```
+
+
+The following are sample plots generated on `r today_date`:
+
+## Plot 1
+
+```{r echo = FALSE, fig.width = 5, fig.height = 5}
+p1
+```
+
+## Plot 2
+
+```{r echo = FALSE}
+p2
+```
+
+## Plot 3
+
+```{r echo = FALSE}
+p3
+```
+
+## References
+Plots 1 and 2 were obtained from the [R Graph Catalog] (http://shinyapps.stat.ubc.ca/r-graph-catalog/)
+
