@@ -64,14 +64,14 @@ Tools determine
 
 ## A Data Analyst's workflow
 
-<center><img src="assets/img/da_workflow.png" width="500"></center>
+<center><img src="assets/img/da_workflow.PNG" width="500"></center>
 
 
 ---
 
 ## A Data Analyst's workflow
 
-<center><img src="assets/img/da_workflow_annotated.png" width="600"></center>
+<center><img src="assets/img/da_workflow_annotated.PNG" width="600"></center>
 
 
 --- .quote .nobackground
@@ -90,7 +90,7 @@ Tools determine
 ---
 ## Reproducibility
 
-<center><img src="assets/img/excel_report.png" width="1000"></center>
+<center><img src="assets/img/excel_report.PNG" width="1000"></center>
 
 
 
@@ -104,13 +104,13 @@ Tools determine
 > - Difficult for a new-comer to follow
 
 *** {name: right}
-<center><img src="assets/img/excel_report.png" width="600"></center>
+<center><img src="assets/img/excel_report.PNG" width="600"></center>
 
 
 ---
 ## Reproducibility - The R way
 
-<center><img src="assets/img/r_commandHistory.png" width="600"></center>
+<center><img src="assets/img/r_commandHistory.PNG" width="600"></center>
 
 >- Command history available
 
@@ -119,7 +119,7 @@ Tools determine
 ---
 ## Reproducibility - The R way
 
-<center><img src="assets/img/r_commandHistory.png" width="600"></center>
+<center><img src="assets/img/r_commandHistory.PNG" width="600"></center>
 
 - Command history available
 	- Enables documentation of all steps
@@ -128,7 +128,7 @@ Tools determine
 ---
 ## Reproducibility - The R way
 
-<center><img src="assets/img/r_commandHistory.png" width="600"></center>
+<center><img src="assets/img/r_commandHistory.PNG" width="600"></center>
 
 - Command history available
 	- Enables documentation of all steps
@@ -139,7 +139,7 @@ Tools determine
 ---
 ## Reproducibility - The R way
 
-<center><img src="assets/img/r_commandHistory.png" width="600"></center>
+<center><img src="assets/img/r_commandHistory.PNG" width="600"></center>
 
 - Command history available
 	- Enables documentation of all steps
@@ -149,8 +149,8 @@ Tools determine
 ---
 ## Reproducibility - The R way
 
-<center><img src="assets/img/knitr_logo_large.png" width="500"></center>
-<center><img src="assets/img/rmarkdown.png" width="150"></center>
+<center><img src="assets/img/knitr_logo_large.PNG" width="500"></center>
+<center><img src="assets/img/rmarkdown.PNG" width="150"></center>
 
 - KnitR and RMarkdown
 
